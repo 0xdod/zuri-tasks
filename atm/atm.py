@@ -1,5 +1,3 @@
-from datetime import datetime
-
 credentials = {'me': 'passMe', 'you': 'passYou', 'other': 'passOther'}
 
 
@@ -15,17 +13,14 @@ if password == credentials.get(name, ''):
     print(options)
     action = int(input('What do you want to do\n'))
     if action == 1:
-        amt = int(input('How much would you like to withdraw?:\n'))
-        print('Processing request to withdraw %d...' % amt)
-        print('Take your cash')
+        withdrawalOperation()
     elif action == 2:
-        amt = int(input('How much would you like to deposit?:\n'))
-        print('Processing request to deposit %d...' % amt)
-        print('Balance: %d' % amt)
+        depositOperation()
     elif action == 3:
         input('What issue would you like to report?\n')
         print('Thank you for contacting us.')
     else:
-        print('Invalid option selected.')
+        print('Invalid option selected. Please try again.')
+        bankOperation(user)
 else:
     print('Incorrect user details, please try again.')
